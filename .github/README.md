@@ -1,15 +1,16 @@
-# Thinkintosh T480
+# T480 Hackintosh
+**Specific OpenCore configuration for Lenovo Thinkpad T480**
 
-<img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="200px">
+<img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="220px">
 
 ![GNU](https://img.shields.io/static/v1?style=for-the-badge&message=GNU+General+Public+License+3.0&color=A42E2B&logo=GNU&logoColor=FFFFFF&label=)
 ![Apple](https://img.shields.io/static/v1?style=for-the-badge&message=OpenCore+0.9.2&color=000000&logo=Apple&logoColor=FFFFFF&label=)
 ![Repo Size](https://img.shields.io/github/repo-size/HBlanqueto/T480-hackintosh?style=for-the-badge)
-## Disclaimer
+## Disclaimer ⚠️
 
-These OpenCore files are for Lenovo Thinkpad T480 models, settings are based in [pierpaolodimarzo's EFI](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy's README](https://github.com/valnoxy/t480-oc). Notice the EFI is compatible with macOS Monterey and Ventura. It is supposted all is working due to this config is based in a complete one with minor changes; [see this](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) for a reference about what you could do.
+These OpenCore settings are based in [pierpaolodimarzo's EFI](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy's README](https://github.com/valnoxy/t480-oc). All components and services are working, you could see [this list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about. My EFI only works for the hardware showed bellow, if you use other bluetooth, wireless, audio card, you'll have to add respective kext manually to make it work; use one of the repository I based in for reference.
 
-## Hardware
+## Hardware 💻
 
 > **Note** 
 >
@@ -28,8 +29,8 @@ These OpenCore files are for Lenovo Thinkpad T480 models, settings are based in 
 | **Storage**     | Western Digital Blue SN570 1 Tb       |
 | **Thunderbolt** | JHL6240 Thunderbolt 3 LP Alpine Ridge |
 
-## BIOS
-Make sure to configure your BIOS options like this:
+## BIOS ⚙️
+Make sure to configure your BIOS options like this
 -  `Security > Security Chip`: **Disabled**
 -  `Memory Protection > Execution Prevention`: **Enabled**
 -  `Virtualization > Intel Virtualization Technology`: **Enabled**
@@ -52,7 +53,7 @@ Thunderbolt Menu
 -  `Security Level`: **No Security**
 -  `Support in Pre Boot Environment > Thunderbolt(TM) device`: **Enabled**
 
-## Preparing USB
+## Preparing USB 🛠️
 > **Note**
 >
 >Next steps will need any of these tools in order to generate or modify files, make sure to download and extrac them before start.
@@ -88,14 +89,16 @@ python macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
 3. Make sure you have `com.apple.recovery.boot` and `EFI` folders with 
 
 ### SMBIOS
-The process is the following:
+> **Note**
+>
+> During the process, confirm the serial given has support with [Apple verification the coverage of a device](https://checkcoverage.apple.com/)
 
 1. Start GenSMBIOS.bat and use option `1` to download MacSerial.
 2. Choose option `2`, to select the path of the config.plist file. It will be located in `EFI -> OC` folder.
 3. Choose option `3`, and enter `MacBookPro15,2` as the machine type.
 4. Press `Q` to quit. Your config now should contain the requied serials.
 
-## Installation
+## Installation 🔌
 > **Note**
 >
 > 1. If you plan to boot macOS without USB you'll need to create an EfI partition during these steps.
@@ -128,13 +131,15 @@ The process is the following:
 6. All is under control if you see in the bootloader option something with the name `macOS Installer`. Just select it and boot it.
 7. During this time, the system could restart 2 times more or even 3, just insist booting the option told before.
 
-### Enjoy the system
-Congratulation, now you'll see `Select Your Country or Region` interface, that means the system is now installed in your computer, configure your user, the session.
+## Enjoy the system 🎓
+Congratulation, now you'll see `Select Your Country or Region` interface, that means the system is now installed in your computer.
 > **Read troubleshooting** to know how to boot your EFI partition instead of USB.
 
-<img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/screenshot.png" alt="img" align="centered" width="850px">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/screenshot.png" alt="img" width="850px"/>
+</p>
 
-## Troubleshooting
+## Troubleshooting 🩺
 ### Samsung PM981
 Most Thinkpad T480 has the `Samsung PM981` which is not compatible with macOS even using NVMeFIX.kext won´t works at all. [Reference](https://www.reddit.com/r/hackintosh/comments/evkljr/samsung_pm981_nvme_hackintosh_reboot_loop/).
 
@@ -167,7 +172,7 @@ If you want to boot directly to macOS system, using [ProperTree](tool) you need 
 ### Hide EFI partitions
 During the bootloader, EFI partitions may be showed. Hiding this is easiestGG as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.
 
-## Special Greetings
+## Special Greetings 🎉
 - [Dortania Gudie](https://dortania.github.io/OpenCore-Install-Guide/)
 - [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480)
 - [valnoxy](https://github.com/valnoxy/t480-oc)

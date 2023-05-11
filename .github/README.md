@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="200px">
 
 ![GNU](https://img.shields.io/static/v1?style=for-the-badge&message=GNU+General+Public+License+3.0&color=A42E2B&logo=GNU&logoColor=FFFFFF&label=)
-![Apple](https://img.shields.io/static/v1?style=for-the-badge&message=OpenCore&color=000000&logo=Apple&logoColor=FFFFFF&label=)
+![Apple](https://img.shields.io/static/v1?style=for-the-badge&message=OpenCore+0.9.2&color=000000&logo=Apple&logoColor=FFFFFF&label=)
 ![Repo Size](https://img.shields.io/github/repo-size/HBlanqueto/T480-hackintosh?style=for-the-badge)
 ## Disclaimer
 

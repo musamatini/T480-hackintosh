@@ -132,7 +132,7 @@ The process is the following:
 Congratulation, now you'll see `Select Your Country or Region` interface, that means the system is now installed in your computer, configure your user, the session.
 > **Read troubleshooting** to know how to boot your EFI partition instead of USB.
 
-<img src="https://raw.githubusercontent.com/HBlanqueto/thinkintosh-480/main/.github/assets/screenshot.png" alt="img" align="centered" width="850px">
+<img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/screenshot.png" alt="img" align="centered" width="850px">
 
 ## Troubleshooting
 ### Samsung PM981

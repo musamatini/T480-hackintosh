@@ -12,7 +12,7 @@ These OpenCore settings are based in [pierpaolodimarzo's EFI](https://github.com
 
 ## Hardware 💻
 
-> **Note** 
+> **Note**
 >
 > As you can see that I don't use **NVMeFix.kext** due Western Digital has oficial support in macOS.
 
@@ -168,6 +168,10 @@ Computer's boot menu shows connected disks but OC does not write its own entry i
 If you want to boot directly to macOS system, using [ProperTree](tool) you need to add this to your `config.plist`:
 - `Misc > Boot > ShowPicker = False`
 - `Misc > Boot > UsePicker = True`
+
+### Change OpenCore background color
+We have to modify with hex valor the backgrounds color. Modify and change the value with the color you want (e.g. BFBFBF)
+- `NVRAM > Add > 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 > DefaultBackgroundColor > <000000>`
 
 ### Hide EFI partitions
 During the bootloader, EFI partitions may be showed. Hiding this is easiestGG as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.

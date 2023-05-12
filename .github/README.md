@@ -1,6 +1,6 @@
 # T480 Hackintosh
 **Specific OpenCore configuration for Lenovo Thinkpad T480**
--
+
 
 <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="220px">
 

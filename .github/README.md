@@ -172,7 +172,7 @@ We have to modify with hex valor the backgrounds color. Modify and change the va
 - `NVRAM > Add > 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 > DefaultBackgroundColor > <000000>`
 
 ### Hide EFI partitions
-During the bootloader, EFI partitions may be showed. Hiding this is easiestGG as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.
+During the bootloader, EFI partitions may be showed. Hiding this is easiest as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.
 
 ## Special Greetings 🎉
 - [Dortania Gudie](https://dortania.github.io/OpenCore-Install-Guide/)

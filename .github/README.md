@@ -1,5 +1,6 @@
 # T480 Hackintosh
 **Specific OpenCore configuration for Lenovo Thinkpad T480**
+-
 
 <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="220px">
 
@@ -35,9 +36,9 @@ Make sure to configure your BIOS options like this
 -  `Memory Protection > Execution Prevention`: **Enabled**
 -  `Virtualization > Intel Virtualization Technology`: **Enabled**
 -  `Virtualization > Intel VT-d Feature`: **Enabled**
--  `Anti-Theft > Computrace -> Current Setting`: **Disabled**
+-  `Anti-Theft > Computrace > Current Setting`: **Disabled**
 -  `Secure Boot > Secure Boot`: **Disabled**
--  `Intel SGX -> Intel SGX Control`: **Disabled**
+-  `Intel SGX  Intel SGX Control`: **Disabled**
 -  `Device Guard`: **Disabled**
 
 StartUp Menu
@@ -65,13 +66,10 @@ Thunderbolt Menu
 1. Download [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) as a ZIP.
 2. Extract the OpenCorePkg-master.zip file.
 3. Open `cmd.exe` with Administrator privileges and change the directory to OpenCorePkg-master\Utilities\macrecovery.
-4. Enter the following command to download macOS:
+4. [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/windows-install.html#downloading-macos) explains how to download macOS for the USB. Enter the following command to download the same as me:
 ```sh
-# macOS Monterey (12)
-python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download
-
 # macOS Ventura (13)
-python macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
+python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 ```
 
 ### Formating USB
@@ -147,7 +145,7 @@ Most Thinkpad T480 has the `Samsung PM981` which is not compatible with macOS ev
 The default keyboard layout and language is Spanish. The value for English would be `en-US:0`. Check this value language [list](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt).
 
 To change the language modify:
-- `NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> prev-lang:kbd`
+- `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82 > prev-lang:kbd`
 
 ### Boot without USB
 1. Open macOS' Terminal and type `sudo diskutil mountDisk disk0s1` (disk0s1 name could depend in the way you created the EFI partition use Utility Disk to check partition)

@@ -9,7 +9,11 @@
 ![Repo Size](https://img.shields.io/github/repo-size/HBlanqueto/T480-hackintosh?style=for-the-badge)
 ## Disclaimer ⚠️
 
-These OpenCore settings are based in [pierpaolodimarzo's EFI](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy's README](https://github.com/valnoxy/t480-oc). All components and services are working, you could see [this list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about. My EFI only works for the hardware showed bellow, if you use other bluetooth, wireless, audio card, you'll have to add respective kext manually to make it work; use one of the repository I based in for reference.
+These OpenCore settings are based in [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) project, and [5T33Z0](https://github.com/5T33Z0/Lenovo-T530-Hackintosh-OpenCore) README, try to support them. This repository couldn't be done without their work.
+
+All components and services are working, you could see [this list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about. The EFI only works for the hardware showed bellow, if you use other bluetooth, wireless, audio card, you'll have to add respective kext manually to make it work; use one of the repository I based in for reference.
+
+Read troubleshooting to modify some stuff from this config.plist in order to add o disable some changes.
 
 ## Hardware 💻
 
@@ -175,6 +179,9 @@ We have to modify with hex valor the backgrounds color. Modify and change the va
 During the bootloader, EFI partitions may be showed. Hiding this is easiest as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.
 
 ## Special Greetings 🎉
+I couldn't start in hackintosh without this amazing guides, references and projects. Please take a look where I took all information showed here.
 - [Dortania Gudie](https://dortania.github.io/OpenCore-Install-Guide/)
 - [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480)
 - [valnoxy](https://github.com/valnoxy/t480-oc)
+- [5T33Z0](https://github.com/5T33Z0/Lenovo-T530-Hackintosh-OpenCore)
+- [blackosx](https://github.com/blackosx/BsxM1)

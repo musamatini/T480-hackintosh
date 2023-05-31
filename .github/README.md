@@ -72,6 +72,18 @@ Thunderbolt Menu
 3. Open `cmd.exe` with Administrator privileges and change the directory to OpenCorePkg-master\Utilities\macrecovery.
 4. [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/windows-install.html#downloading-macos) explains how to download macOS for the USB. Enter the following command to download the same as me:
 ```sh
+# Mojave (10.14)
+python3 macrecovery.py -b Mac-7BA5B2DFE22DDD8C -m 00000000000KXPG00 download
+
+# Catalina (10.15)
+python3 macrecovery.py -b Mac-00BE6ED71E35EB86 -m 00000000000000000 download
+
+# Big Sur (11)
+python3 macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
+
+# Monterey (12)
+python3 macrecovery.py -b Mac-FFE5EF870D7BA81A -m 00000000000000000 download
+
 # macOS Ventura (13)
 python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 ```

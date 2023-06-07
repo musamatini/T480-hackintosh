@@ -16,13 +16,13 @@ All components and services are working, you could see [this list](https://githu
 Read troubleshooting to modify some stuff from this config.plist in order to add o disable some changes.
 
 ## Hardware 💻
-
 > **Note**
 >
-> As you can see that I don't use **NVMeFix.kext** due Western Digital has oficial support in macOS.
+> I currently support macOS Big Sur, Monterey and Ventura. And as you can see that I don't use **NVMeFix.kext** due Western Digital has oficial support in macOS.
 
 | Category        | Name                                  |
 | --------------- | ------------------------------------- |
+| **Display**     | 1920x1080                             |
 | **SMBIOS**      | MacBookPro15,2                        |
 | **CPU**         | i7-8650                               |
 | **GPU**         | Intel UHD Graphics 620                |
@@ -72,12 +72,6 @@ Thunderbolt Menu
 3. Open `cmd.exe` with Administrator privileges and change the directory to OpenCorePkg-master\Utilities\macrecovery.
 4. [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/windows-install.html#downloading-macos) explains how to download macOS for the USB. Enter the following command to download the same as me:
 ```sh
-# Mojave (10.14)
-python3 macrecovery.py -b Mac-7BA5B2DFE22DDD8C -m 00000000000KXPG00 download
-
-# Catalina (10.15)
-python3 macrecovery.py -b Mac-00BE6ED71E35EB86 -m 00000000000000000 download
-
 # Big Sur (11)
 python3 macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
 
@@ -163,6 +157,11 @@ The default keyboard layout and language is Spanish. The value for English would
 To change the language modify:
 - `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82 > prev-lang:kbd`
 
+### Latam keyboard
+My keyboard layout is not oficially supported by macOS, y have the "<>" key in the bottom of the keyboard, so this repository has fixed that key. Follow the README to apply it.
+
+[Latam-keyboard](https://github.com/neosergio/Latam-Keyboard)
+
 ### Boot without USB
 1. Open macOS' Terminal and type `sudo diskutil mountDisk disk0s1` (disk0s1 name could depend in the way you created the EFI partition use Utility Disk to check partition)
 2. Open Finder and copy the `EFI` folder from the USB to the main disk's `EFI` partition.
@@ -189,6 +188,16 @@ We have to modify with hex valor the backgrounds color. Modify and change the va
 
 ### Hide EFI partitions
 During the bootloader, EFI partitions may be showed. Hiding this is easiest as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.
+
+### 1366x768 Display (disable smoothing font)
+It seems that not many thinkpads could have the same display as me, so in order to make it more greatfully for your display, you can use any of these commands
+```sh
+# disable font smoothing
+defaults -currentHost write -g AppleFontSmoothing -int 0
+
+# enable default smoothing. You can also use "1" for light smoothing and "3" value for strong smoothing.
+defaults -currentHost write -g AppleFontSmoothing -int 2
+```
 
 ## Special Greetings 🎉
 I couldn't start in hackintosh without this amazing guides, references and projects. Please take a look where I took all information showed here.

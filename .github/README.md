@@ -5,20 +5,24 @@
 <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="220px">
 
 ![GNU](https://img.shields.io/static/v1?style=for-the-badge&message=GNU+General+Public+License+3.0&color=A42E2B&logo=GNU&logoColor=FFFFFF&label=)
-![Apple](https://img.shields.io/static/v1?style=for-the-badge&message=OpenCore+0.9.3&color=000000&logo=Apple&logoColor=FFFFFF&label=)
+![Apple](https://img.shields.io/static/v1?style=for-the-badge&message=OpenCore+0.9.4&color=000000&logo=Apple&logoColor=FFFFFF&label=)
 ![Repo Size](https://img.shields.io/github/repo-size/HBlanqueto/T480-hackintosh?style=for-the-badge)
-## Disclaimer ⚠️
+## Disclaimer
 
-These OpenCore settings are based in [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) project, and [5T33Z0](https://github.com/5T33Z0/Lenovo-T530-Hackintosh-OpenCore) README, try to support them. This repository couldn't be done without their work.
+This EFI is based in [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) projects, go and support them. This repository couldn't be done without their work.
 
-All components and services are working, you could see [this list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about. The EFI only works for the hardware showed bellow, if you use other bluetooth, wireless, audio card, you'll have to add respective kext manually to make it work; use one of the repository I based in for reference.
+**What's working?**
 
-Read troubleshooting to modify some stuff from this config.plist in order to add o disable some changes.
+All components and services are working, you could see [this list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about.
+
+**I have some troubles in my ThinkPad**
+
+Troubleshooting has some tips and discoveries that I resolved in my doubts over time when setting OpenCore and macOS system.
 
 ## Hardware 💻
 > **Note**
 >
-> I currently support macOS Big Sur, Monterey and Ventura. And as you can see that I don't use **NVMeFix.kext** due Western Digital has oficial support in macOS.
+> Add **NVMeFix.kext** if you don't use any Western Digital storage device.
 
 | Category        | Name                                  |
 | --------------- | ------------------------------------- |
@@ -26,7 +30,7 @@ Read troubleshooting to modify some stuff from this config.plist in order to add
 | **SMBIOS**      | MacBookPro15,2                        |
 | **CPU**         | i7-8650                               |
 | **GPU**         | Intel UHD Graphics 620                |
-| **Memory**      | 24G (8+16) DDR4 2400MHz               |
+| **Memory**      | 64G (32x2) DDR4 3200MHz (Thinkpad only supports 2400MHz)              |
 | **LAN**         | Intel Ethernet Connection I219-V      |
 | **Wifi**        | Intel Wi-Fi AC 8265NGW                |
 | **Audio**       | Realtek ALC256                        |
@@ -50,7 +54,7 @@ StartUp Menu
 -  `CSM Support`: **No**
 
 USB Menu
--  `Always On USB`: **Disabled** -> It is necessary to extend the battery life
+-  `Always On USB`: **Disabled**
 
 Thunderbolt Menu
 -  `Thunderbolt BIOS Assist Mode`: **Disabled**
@@ -59,18 +63,29 @@ Thunderbolt Menu
 -  `Support in Pre Boot Environment > Thunderbolt(TM) device`: **Enabled**
 
 ## Preparing USB 🛠️
-> **Note**
+> **Note** ⚠️
 >
->Next steps will need any of these tools in order to generate or modify files, make sure to download and extrac them before start.
+> Next steps were tought to be done in a Windows system, I'll recommend using Python3 from the Microsoft Store.
 
-- **Python 3** (any version, I installed it from Microsoft Store)
-- [**ProperTree**]()
+- **Python 3**
+- [**ProperTree**](https://github.com/corpnewt/ProperTree)
 - [**GenSMBIOS**](https://github.com/corpnewt/GenSMBIOS)
+
+### Formating USB
+1. Plug your USB device.
+2. Open CMD with administrative permissions, type `diskpart`
+3. Type `list disk` to see your disk id.
+4. Select your pendrive by typing `select disk <diskid>`
+5. Clean the pendrive and convert it to GPT. First, type `clean` and then `convert gpt`.
+6. Create a new partition where we can put our files on. First, type `create partition primary`, then select the new partition with `select partition 1` and format it `format fs=fat32 quick`.
+7. Finally, mount your pendrive by typing `assign`
+
 ### OpenCore
 1. Download [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) as a ZIP.
 2. Extract the OpenCorePkg-master.zip file.
-3. Open `cmd.exe` with Administrator privileges and change the directory to OpenCorePkg-master\Utilities\macrecovery.
-4. [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/windows-install.html#downloading-macos) explains how to download macOS for the USB. Enter the following command to download the same as me:
+3. With **Windows Terminal** or **CMD**, go to next path `OpenCorePkg-master\Utilities\macrecovery`
+4. From the [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/windows-install.html#downloading-macos), use any of these commands to download macOS version I support in my EFI:
+
 ```sh
 # Big Sur (11)
 python3 macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
@@ -82,72 +97,89 @@ python3 macrecovery.py -b Mac-FFE5EF870D7BA81A -m 00000000000000000 download
 python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 ```
 
-### Formating USB
-1. Plug your USB device.
-2. Open CMD with administrative permissions, type `diskpart`
-3. Type `list disk` to see your disk id.
-4. Select your pendrive by typing `select disk <diskid>`
-5. Clean the pendrive and convert it to GPT. First, type `clean` and then `convert gpt`.
-6. Create a new partition where we can put our files on. First, type `create partition primary`, then select the new partition with `select partition 1` and format it `format fs=fat32 quick`.
-7. Finally, mount your pendrive by typing `assign`
-
 ### Folders
-1. Create the folder `com.apple.recovery.boot` on the pendrive. Copy `OpenCorePkg-master\Utilities\macrecovery\BaseSystem.dmg` and `Basesystem.chunklist` into that folder.
-2. Download and copy the `EFI` folder of this repository and paste it into your USB.
-3. Make sure you have `com.apple.recovery.boot` and `EFI` folders with 
+
+> Notes
+>
+> I have an EFI for BigSur and the other is compatible with Monterey and Ventura, use correctly the one for your macOS version.
+
+1. After downloading macOS with those commands, create the folder `com.apple.recovery.boot` in the pendrive.
+2. Copy `OpenCorePkg-master\Utilities\macrecovery\BaseSystem.dmg` and `Basesystem.chunklist` into `com.apple.recovery.boot` folder.
+3. Download and copy the `EFI` folder of this repository and paste it into your USB.
+4. Make sure you have `com.apple.recovery.boot` and `EFI` in the pendrive.
 
 ### SMBIOS
 > **Note**
 >
-> During the process, confirm the serial given has support with [Apple verification the coverage of a device](https://checkcoverage.apple.com/)
+> In order to use AppleID and other services, check if the serial generated has support with [Apple verification the coverage of a device](https://checkcoverage.apple.com/)
 
 1. Start GenSMBIOS.bat and use option `1` to download MacSerial.
-2. Choose option `2`, to select the path of the config.plist file. It will be located in `EFI -> OC` folder.
+2. Choose option `2`, to select the path of the **config.plist** file. It will be located in `EFI -> OC` folder in your pendrive.
 3. Choose option `3`, and enter `MacBookPro15,2` as the machine type.
 4. Press `Q` to quit. Your config now should contain the requied serials.
 
 ## Installation 🔌
 > **Note**
 >
-> 1. If you plan to boot macOS without USB you'll need to create an EfI partition during these steps.
-> 2. During installation, your computer may restart sometimes, keep calm and continue the process.
+> 1.  Make sure you have an Internet connection or use Ethernet.
+> 2. Boot macOS without USB is possible, you'll need to create an EFI partition during disk manager steps.
+> 3. In the installation your computer may restart sometimes, keep calm and continue the process.
 
 ### Boot USB
-- Make sure you have an Internet connection or use Ethernet.
 
 1. Restart your computer and open Boot Menu during startup with `F12`
 2. Choose your USB device and wait.
-3. A Black Screen with Boot options must be showed, touch the space bar to display more options to boot and choose the `OC DEVEL (dmg)`, you could recognize it like a yellow gear.
-4. A menu must be display, choose `Utility Disk`
+3. A Black Screen with Boot options must be showed.
+4. Press the **space bar** to display hidden options.
+5. Choose the `OC DEVEL (dmg)`, you could recognize like a yellow gear.
 
 ### Partitions
-1. Choose the device which you'll install the system and apply the option `erase`. Make sure to have this settings.
+1. A menu must be display, choose `Utility Disk`.
+2. Touch `View` and choose the option `Show all devices`. Once done, all your storage devices will be show in the SideBar.
+3. Choose the device which you'll install the system and apply. the option `erase`. Make sure to have this settings.
    - Name: 'Macintosh HD'
    - Format: APFS
    - Scheme: GUID Partition Map
-> In **Name** option you could write whatever you like (e.g. 'Thinkintosh HD', 'Ventura',  'macOS Ventura'), make sure you wrote a name you liked the most due to cannot change it after install it in the bootloader.
-2. Once format done, choose your storage again and select `Partitions` option.
-3. Select the `+` and choose the option that says `Create partition`, then resize the new partition created to 512 mb.
+> You  could name your device as you want, keep in my that It cannot be modified after the system is installed.
+4. Once done, choose your storage again and select `Partitions` option.
+5. Select the `+` and choose the option that says `Create partition`, then resize the new partition created to 512 mb.
    - Format: MS-DOS (fat)
 > Do not select ExFat, it won't be possible to boot OC.
-### Base system
-1. Once you done, exit `Utility Disk` and choose `Install macOS...` or `Reinstall macOS...`
+
+### System
+> Keep your pendrive pluged.
+1. Exit `Utility Disk` and choose `Install macOS...` or `Reinstall macOS...`
 2. Acept terms and conditions, now it will show you your devices options to install the system.
 3. Choose the one you named steps before.
-4. Now wait until the installation, It may take 1 hour, more or less...
-5. Once the installation finished, your computer could restart without any reason. Just boot into your USB again.
-6. All is under control if you see in the bootloader option something with the name `macOS Installer`. Just select it and boot it.
-7. During this time, the system could restart 2 times more or even 3, just insist booting the option told before.
+4. Now wait until the installation, this could take some time.
+5. Once the installation finished, your computer could restart without any reason.
+6. Keep waiting and check if in your screen shows something like "Installation process 27 minutes left".
+7. Your computer could restart 2 or 3 times.
 
 ## Enjoy the system 🎓
 Congratulation, now you'll see `Select Your Country or Region` interface, that means the system is now installed in your computer.
-> **Read troubleshooting** to know how to boot your EFI partition instead of USB.
+
+### Boot without USB
+In order to boot system without pendrive, just follow next steps depending how the case presented in your computer.
+
+#### EFI is mounted
+1. Open Finder and see the SideBar, check if there are two EFI device in `Locations`, one won't have any folder inside.
+2. Copy the `EFI` folder from your pendrive to the main disk's `EFI` partition.
+3. Unplug the USB device and reboot your laptop. Now you can boot macOS without your USB device.
+
+#### EFI's not mounted
+1. Open macOS Terminal and type `sudo diskutil mountDisk disk0s1` (disk0s1 name could depend in the way you created the EFI partition use Utility Disk to check partition)
+2. Open Finder and copy the `EFI` folder from the USB to the main disk's `EFI` partition.
+3. Unplug the USB device and reboot your laptop. Now you can boot macOS without your USB device.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/screenshot.png" alt="img" width="850px"/>
 </p>
 
 ## Troubleshooting 🩺
+> Most of the next tips and guides will need the next tool in order to modify `config.plist``.
+- [**ProperTree**](https://github.com/corpnewt/ProperTree)
+
 ### Samsung PM981
 Most Thinkpad T480 has the `Samsung PM981` which is not compatible with macOS even using NVMeFIX.kext won´t works at all. [Reference](https://www.reddit.com/r/hackintosh/comments/evkljr/samsung_pm981_nvme_hackintosh_reboot_loop/).
 
@@ -158,27 +190,23 @@ To change the language modify:
 - `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82 > prev-lang:kbd`
 
 ### Latam keyboard
-My keyboard layout is not oficially supported by macOS, y have the "<>" key in the bottom of the keyboard, so this repository has fixed that key. Follow the README to apply it.
+My keyboard has some troubles in the hackintosh, I have the "<>" keys at the bottom of the keyboard, this repository has fixed that key. Follow its README to install.
 
-[Latam-keyboard](https://github.com/neosergio/Latam-Keyboard)
-
-### Boot without USB
-1. Open macOS' Terminal and type `sudo diskutil mountDisk disk0s1` (disk0s1 name could depend in the way you created the EFI partition use Utility Disk to check partition)
-2. Open Finder and copy the `EFI` folder from the USB to the main disk's `EFI` partition.
-3. Unplug the USB device and reboot your laptop. Now you can boot macOS without your USB device.
+- [Latam-keyboard by neosergio](https://github.com/neosergio/Latam-Keyboard)
 
 ### BIOS entry
-This is recommend for dualbooting more than one system in your computer. By default this is enabled in this configuration.
-#### **Enable**
+By default this is enabled in this `config.plist`. I'll recommend this by default.
+#### Enable
 OC writes an entry into BIOS pointing directly to OpenCore.efi and the computer's boot menu shows OC and connected disks.
 - `Misc > Boot > LauncherOption = Full`
 - `Misc > Boot > LauncherPath = Default`
-#### **Disable**
+#### Disable
 Computer's boot menu shows connected disks but OC does not write its own entry into BIOS
 - `Misc > Boot > LauncherOption = Disabled`
 - `Misc > Boot > LauncherPath = Default`
+
 ### Hide OpenCore
-If you want to boot directly to macOS system, using [ProperTree](tool) you need to add this to your `config.plist`:
+Booting directly into macOS system, use [ProperTree]() you need to add this to your `config.plist`:
 - `Misc > Boot > ShowPicker = False`
 - `Misc > Boot > UsePicker = True`
 
@@ -186,11 +214,16 @@ If you want to boot directly to macOS system, using [ProperTree](tool) you need 
 We have to modify with hex valor the backgrounds color. Modify and change the value with the color you want (e.g. BFBFBF)
 - `NVRAM > Add > 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 > DefaultBackgroundColor > <000000>`
 
+### Change NVRAM size
+By default It is recommend to use 1.5Gb, even macbook Pro use the same size, but If you are who likes to using more, read next Reddit post about It.
+
+- [Whatevergreen iGPU VRAM allocation via framebuffer-unifiedmem](https://www.reddit.com/r/hackintosh/comments/gp07ko/whatevergreen_igpu_vram_allocation_via/?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=2)
+
 ### Hide EFI partitions
 During the bootloader, EFI partitions may be showed. Hiding this is easiest as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.
 
-### 1366x768 Display (disable smoothing font)
-It seems that not many thinkpads could have the same display as me, so in order to make it more greatfully for your display, you can use any of these commands
+### Disable smoothing font
+Smoothing font can exhaust the eyes in 1366x768 display, disable It with next command.
 ```sh
 # disable font smoothing
 defaults -currentHost write -g AppleFontSmoothing -int 0
@@ -204,5 +237,3 @@ I couldn't start in hackintosh without this amazing guides, references and proje
 - [Dortania Gudie](https://dortania.github.io/OpenCore-Install-Guide/)
 - [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480)
 - [valnoxy](https://github.com/valnoxy/t480-oc)
-- [5T33Z0](https://github.com/5T33Z0/Lenovo-T530-Hackintosh-OpenCore)
-- [blackosx](https://github.com/blackosx/BsxM1)

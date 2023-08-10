@@ -15,28 +15,24 @@ This EFI is based in [pierpaolodimarzo](https://github.com/pierpaolodimarzo/Thin
 
 All components and services are working, you could see [this list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about.
 
-**I have some troubles in my ThinkPad**
-
-Troubleshooting has some tips and discoveries that I resolved in my doubts over time when setting OpenCore and macOS system.
-
 ## Hardware 💻
 > **Note**
 >
 > Add **NVMeFix.kext** if you don't use any Western Digital storage device.
 
-| Category        | Name                                  |
-| --------------- | ------------------------------------- |
-| **Display**     | 1920x1080                             |
-| **SMBIOS**      | MacBookPro15,2                        |
-| **CPU**         | i7-8650                               |
-| **GPU**         | Intel UHD Graphics 620                |
-| **Memory**      | 64G (32x2) DDR4 3200MHz (Thinkpad only supports 2400MHz)              |
-| **LAN**         | Intel Ethernet Connection I219-V      |
-| **Wifi**        | Intel Wi-Fi AC 8265NGW                |
-| **Audio**       | Realtek ALC256                        |
-| **Bluetooth**   | Bluetooth 4.2                         |
-| **Storage**     | Western Digital Blue SN570 1 Tb       |
-| **Thunderbolt** | JHL6240 Thunderbolt 3 LP Alpine Ridge |
+| **Category**    | **Details**                                              |
+| --------------- | -------------------------------------------------------- |
+| **Display**     | 1920x1080                                                |
+| **SMBIOS**      | MacBookPro15,2                                           |
+| **CPU**         | Intel Core i7-8650                                       |
+| **GPU**         | Intel UHD Graphics 620                                   |
+| **Memory**      | 64G (32x2) DDR4 3200MHz (Only supports 2400MHz)          |
+| **LAN**         | Intel Ethernet Connection I219-V                         |
+| **Wifi**        | Intel Wi-Fi AC 8265NGW                                   |
+| **Audio**       | Realtek ALC256                                           |
+| **Bluetooth**   | Bluetooth 4.2                                            |
+| **Storage**     | Western Digital Blue SN570 1 Tb                          |
+| **Thunderbolt** | JHL6240 Thunderbolt 3 LP Alpine Ridge                    |
 
 ## BIOS ⚙️
 Make sure to configure your BIOS options like this
@@ -177,8 +173,11 @@ In order to boot system without pendrive, just follow next steps depending how t
 </p>
 
 ## Troubleshooting 🩺
-> Most of the next tips and guides will need the next tool in order to modify `config.plist``.
-- [**ProperTree**](https://github.com/corpnewt/ProperTree)
+> [ProperTree](https://github.com/corpnewt/ProperTree) is going to be used for modifying `config.plist`. Remember to install `hombrew` and `python-tk` dependency, also you can build te app in macOS.
+
+
+### Customize OpenCore
+Dortania's guide has a section that shows many [themes](https://dortania.github.io/OpenCanopy-Gallery/blackosx.html#themes) made by blackosx. In GitHub there are other OpenCore themes not showed in the guide but you could inquire them.
 
 ### Samsung PM981
 Most Thinkpad T480 has the `Samsung PM981` which is not compatible with macOS even using NVMeFIX.kext won´t works at all. [Reference](https://www.reddit.com/r/hackintosh/comments/evkljr/samsung_pm981_nvme_hackintosh_reboot_loop/).

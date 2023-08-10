@@ -59,7 +59,7 @@ Thunderbolt Menu
 -  `Support in Pre Boot Environment > Thunderbolt(TM) device`: **Enabled**
 
 ## Preparing USB 🛠️
-> **Note** ⚠️
+> **Note**
 >
 > Next steps were tought to be done in a Windows system, I'll recommend using Python3 from the Microsoft Store.
 
@@ -205,7 +205,7 @@ Computer's boot menu shows connected disks but OC does not write its own entry i
 - `Misc > Boot > LauncherPath = Default`
 
 ### Hide OpenCore
-Booting directly into macOS system, use [ProperTree]() you need to add this to your `config.plist`:
+In the `config.plist` modify next line to show or hide the Boot Menu, I personally do not recommend this due to some cases a macOS update could break something.
 - `Misc > Boot > ShowPicker = False`
 - `Misc > Boot > UsePicker = True`
 

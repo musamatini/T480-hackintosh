@@ -9,11 +9,11 @@
 ![Repo Size](https://img.shields.io/github/repo-size/HBlanqueto/T480-hackintosh?style=for-the-badge)
 ## Disclaimer
 
-This EFI is based in [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) projects, go and support them. This repository couldn't be done without their work.
+This EFI is based in [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) repository, go and support them. This repository couldn't be done without their work.
 
 **What's working?**
 
-All components and services are working, you could see [this list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about.
+Most of all components and services are working, take a look to [pierpaolodimarzo's list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about.
 
 ## Hardware 💻
 > **Note**
@@ -97,7 +97,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 
 > Notes
 >
-> I have an EFI for BigSur and the other is compatible with Monterey and Ventura, use correctly the one for your macOS version.
+> There is an EFI specifically for BigSur, use It if you don't plan to use Ventura or Monterey.
 
 1. After downloading macOS with those commands, create the folder `com.apple.recovery.boot` in the pendrive.
 2. Copy `OpenCorePkg-master\Utilities\macrecovery\BaseSystem.dmg` and `Basesystem.chunklist` into `com.apple.recovery.boot` folder.

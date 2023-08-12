@@ -1,7 +1,6 @@
 # T480 Hackintosh
 **Specific OpenCore configuration for Lenovo Thinkpad T480**
 
-
 <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="220px">
 
 ![GNU](https://img.shields.io/static/v1?style=for-the-badge&message=GNU+General+Public+License+3.0&color=A42E2B&logo=GNU&logoColor=FFFFFF&label=)
@@ -18,7 +17,7 @@ I constantly check `config.plist`status with [sanitychecker](https://sanitycheck
 Most of all components and services are working, take a look to [pierpaolodimarzo's list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about.
 
 ## Hardware 💻
-> **Note**
+> **Notes**
 >
 > Add **NVMeFix.kext** if you don't use any Western Digital storage device.
 
@@ -61,7 +60,7 @@ Thunderbolt Menu
 -  `Support in Pre Boot Environment > Thunderbolt(TM) device`: **Enabled**
 
 ## Preparing USB 🛠️
-> **Note**
+> **Notes**
 >
 > Next steps were tought to be done in a Windows system, I'll recommend using Python3 from the Microsoft Store.
 
@@ -97,7 +96,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 
 ### Folders
 
-> Notes
+> **Notes**
 >
 > There is an EFI specifically for BigSur, use It if you don't plan to use Ventura or Monterey.
 
@@ -107,7 +106,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 4. Make sure you have `com.apple.recovery.boot` and `EFI` in the pendrive.
 
 ### SMBIOS
-> **Note**
+> **Notes**
 >
 > In order to use AppleID and other services, check if the serial generated has support with [Apple verification the coverage of a device](https://checkcoverage.apple.com/)
 

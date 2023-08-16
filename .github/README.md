@@ -2,7 +2,7 @@
 **Specific OpenCore configuration for Lenovo Thinkpad T480**
 
 TODO
-- [ ] Create my own EFI from 0, actually I based all my files in two repositories but as a personal challenge I'm gonna change and try to do my own out of the box experience. I want to support from Mojave to Sonoma.
+- [ ] **Create my own EFI from 0, actually I based all my files in two repositories but as a personal challenge I'm gonna change and try to do my own out of the box experience. I want to support from Mojave to Sonoma.**
 
 <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="220px">
 

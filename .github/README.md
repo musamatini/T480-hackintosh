@@ -1,8 +1,11 @@
 # T480 Hackintosh
-**Specific OpenCore configuration for Lenovo Thinkpad T480**
+**OpenCore configuration for Lenovo Thinkpad T480**
 
-TODO
-- [ ] **Create my own EFI from 0, actually I based all my files in two repositories but as a personal challenge I'm gonna change and try to do my own out of the box experience. I want to support from Mojave to Sonoma.**
+**TODO**
+- [ ] Create the EFI files from 0.
+- [ ] Dual boot tutorial. It's possible but you have to add the OpenCore entry with `efibootmgr` tool from a usb with Linux
+- [ ] Verify if current EFI supports Mojave to Sonoma.
+- [ ] Write a new README.md
 
 <img src="https://raw.githubusercontent.com/HBlanqueto/T480-hackintosh/main/.github/assets/T480.webp" alt="img" align="right" width="220px">
 
@@ -20,9 +23,10 @@ I constantly check `config.plist`status with [sanitychecker](https://sanitycheck
 Most of all components and services are working, take a look to [pierpaolodimarzo's list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about.
 
 ## Hardware 💻
-> **Notes**
+> IMPORTANT!
 >
-> Add **NVMeFix.kext** if you don't use any Western Digital storage device.
+> 1. Add **NVMeFix.kext** if you don't use any Western Digital storage device.
+> 2. Generate your own **SMBIOS** or your won't be able to use Apple Services.
 
 | **Category**    | **Details**                                              |
 | --------------- | -------------------------------------------------------- |
@@ -37,6 +41,10 @@ Most of all components and services are working, take a look to [pierpaolodimarz
 | **Bluetooth**   | Bluetooth 4.2                                            |
 | **Storage**     | Western Digital Blue SN570 1 Tb                          |
 | **Thunderbolt** | JHL6240 Thunderbolt 3 LP Alpine Ridge                    |
+
+### Succesfully Installed
+This is a list of different ThinkPad models that using this EFI could install macOS.
+- [ThinkPad T580](https://es.scribd.com/document/561921936/ThinkPad-T580-Platform-Specifications) tested by **rvlphee**, reference [here](https://github.com/HBlanqueto/T480-hackintosh/issues/2)
 
 ## BIOS ⚙️
 Make sure to configure your BIOS options like this

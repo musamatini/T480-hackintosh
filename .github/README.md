@@ -4,19 +4,6 @@ Welcome to the T480 Hackintosh project, aimed at enabling macOS to run on the Le
 
 <img src="https://raw.githubusercontent.com/musamatini/T480-hackintosh/main/.github/assets/ThinkpadT480.png" alt="img" align="right" width="220px">
 
-## Table of Contents 📚
-
-- [Disclaimer](#disclaimer) ⚠️
-- [Features](#features) ✨
-- [Hardware Specifications](#hardware) 🛠️
-- [BIOS Configuration](#bios-configuration) 🔧
-- [Preparing USB](#preparing-usb) ⚙️
-- [OpenCore Customization](#opencore-customization) 🧰
-- [EFI Installation](#efi-installation) 🖥️
-- [Booting without USB](#booting-without-usb) 🚀
-- [Troubleshooting](#troubleshooting) 🛠️❗
-- [Special Thanks](#special-thanks) 🙌
-
 ## Disclaimer ⚠️
 
 This EFI is built upon the foundations of the [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) repositories. Credit goes to them for their valuable work.

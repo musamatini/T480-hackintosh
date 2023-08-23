@@ -170,9 +170,12 @@ Congratulation, now you'll see `Select Your Country or Region` interface, that m
   
 <br/>
 
-## Troubleshooting 🛠️❗
 
-> [ProperTree](https://github.com/corpnewt/ProperTree) is going to be used for modifying `config.plist`. Remember to install `hombrew` and `python-tk` dependency, also you can build te app in macOS.
+
+<details>
+  <summary>Troubleshooting 🛠️❗</summary>
+  
+  > [ProperTree](https://github.com/corpnewt/ProperTree) is going to be used for modifying `config.plist`. Remember to install `hombrew` and `python-tk` dependency, also you can build te app in macOS.
 
 
 ### Customize OpenCore
@@ -229,6 +232,12 @@ defaults -currentHost write -g AppleFontSmoothing -int 0
 # enable default smoothing. You can also use "1" for light smoothing and "3" value for strong smoothing.
 defaults -currentHost write -g AppleFontSmoothing -int 2
 ```
+
+  
+</details>
+
+
+
 
 <br/>
 

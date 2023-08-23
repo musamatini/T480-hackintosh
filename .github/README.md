@@ -156,7 +156,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 6. Keep waiting and check if in your screen shows something like "Installation process 27 minutes left".
 7. Your computer could restart 2 or 3 times.
 
-## Enjoy the system 🎓
+### Enjoy the system 🎓
 Congratulation, now you'll see `Select Your Country or Region` interface, that means the system is now installed in your computer.
 
 
@@ -173,7 +173,7 @@ Congratulation, now you'll see `Select Your Country or Region` interface, that m
 
 
 <details>
-  <summary>Troubleshooting 🛠️❗</summary>
+  <summary>## Troubleshooting 🛠️❗</summary>
   
   > [ProperTree](https://github.com/corpnewt/ProperTree) is going to be used for modifying `config.plist`. Remember to install `hombrew` and `python-tk` dependency, also you can build te app in macOS.
 
@@ -235,9 +235,6 @@ defaults -currentHost write -g AppleFontSmoothing -int 2
 
   
 </details>
-
-
-
 
 <br/>
 

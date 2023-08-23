@@ -18,7 +18,8 @@ Most of all components and services are working, take a look to [pierpaolodimarz
 
 ## Hardware Specifications 🛠️
 
-> **IMPORTANT!**
+> **note**
+>**IMPORTANT!**
 >
 > 1. Add **NVMeFix.kext** if you don't use any Western Digital storage device.
 > 2. Generate your own **SMBIOS** or your won't be able to use Apple Services.

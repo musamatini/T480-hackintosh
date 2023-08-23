@@ -62,7 +62,7 @@ In the Thunderbolt Menu, configure the settings accordingly.
 <br/>
 
 ## Preparing USB 🛠️
-> **Notes**
+> **note**
 >
 > Next steps were tought to be done in a Windows system, I'll recommend using Python3 from the Microsoft Store.
 

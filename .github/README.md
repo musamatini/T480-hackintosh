@@ -6,9 +6,13 @@ Welcome to the T480 Hackintosh project, aimed at enabling macOS to run on the Le
 
 ## Disclaimer ⚠️
 
-This EFI is built upon the foundations of the [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) repositories. Credit goes to them for their valuable work.
+This EFI is based in [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) repository, go and support them. This repository couldn't be done without their work.
 
-Please refer to their repositories for more information and consider supporting their efforts.
+I constantly check `config.plist`status with [sanitychecker](https://sanitychecker.ocutils.me/results/6d99f7fc-bb02-4f1b-8e30-99600eefad79), I'll recommends you to use It as the tool in the OpenCore-PKG, any suggestion is acepted to improve the files.
+
+**What's working?**
+
+Most of all components and services are working, take a look to [pierpaolodimarzo's list](https://github.com/pierpaolodimarzo/ThinkPad-T480/tree/main#-what-works) to make an idea about.
 
 <br/>
 

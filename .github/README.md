@@ -10,7 +10,7 @@ This EFI is built upon the foundations of the [pierpaolodimarzo](https://github.
 
 Please refer to their repositories for more information and consider supporting their efforts.
 
-
+<br/>
 ## Hardware Specifications 🛠️
 
 > IMPORTANT!
@@ -31,7 +31,7 @@ Please refer to their repositories for more information and consider supporting 
 | Bluetooth      | Bluetooth 4.2                      |
 | Storage        | Western Digital Blue SN570 1TB     |
 | Thunderbolt    | JHL6240 Thunderbolt 3 LP Alpine Ridge |
-
+<br/>
 ## BIOS Configuration 🔧
 
 For successful installation, configure your BIOS settings as follows:
@@ -73,17 +73,17 @@ Follow these steps to prepare your USB:
 - Perform the required disk management steps for installation.
 - Follow the installation process and wait for the system to be installed.
 - Reboot your laptop and proceed with the remaining setup steps.
-
+<br/>
 ## Booting without USB 🚀
 
 - Mount the EFI partition of your main disk.
 - Copy the EFI folder from the USB to the main disk's EFI partition.
 - Unplug the USB device and reboot your laptop to boot macOS.
-
+<br/>
 ## Troubleshooting 🛠️❗
 
 For any troubleshooting or customization needs, please refer to the [Troubleshooting](#troubleshooting) section of the repository.
-
+<br/>
 ## Special Thanks 🙌
 
 A big thank you to the following references and projects that made this hackintosh project possible:

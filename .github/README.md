@@ -47,8 +47,7 @@ Before you proceed, it's important to ensure your hardware specifications match 
 | Storage        | Western Digital Blue SN570 1TB     |
 | Thunderbolt    | JHL6240 Thunderbolt 3 LP Alpine Ridge |
 
-<details>
-<summary><strong>BIOS Configuration 🔧</strong></summary>
+## BIOS Configuration 🔧
 
 For successful installation, configure your BIOS settings as follows:
 
@@ -67,10 +66,7 @@ For USB settings, set `Always On USB` to **Disabled**.
 
 In the Thunderbolt Menu, configure the settings accordingly.
 
-</details>
-
-<details>
-<summary><strong>Preparing USB ⚙️</strong></summary>
+## Preparing USB ⚙️
 
 Before installation, ensure you have the following tools:
 
@@ -85,11 +81,7 @@ Follow these steps to prepare your USB:
 3. Create and organize necessary folders and files in the USB.
 4. Download the `EFI` folder from the repository and copy it to the USB.
 
-</details>
-
-
-<details>
-<summary><strong>EFI Installation 🖥️</strong></summary>
+## EFI Installation 🖥️
 
 - Boot from your prepared USB device.
 - Choose the OC DEVEL (dmg) option from the boot menu.
@@ -97,34 +89,22 @@ Follow these steps to prepare your USB:
 - Follow the installation process and wait for the system to be installed.
 - Reboot your laptop and proceed with the remaining setup steps.
 
-</details>
-
-
-<details>
-<summary><strong>Booting without USB 🚀</strong></summary>
+## Booting without USB 🚀
 
 - Mount the EFI partition of your main disk.
 - Copy the EFI folder from the USB to the main disk's EFI partition.
 - Unplug the USB device and reboot your laptop to boot macOS.
 
-</details>
-
-<details>
-<summary><strong>Troubleshooting 🛠️❗</strong></summary>
+## Troubleshooting 🛠️❗
 
 For any troubleshooting or customization needs, please refer to the [Troubleshooting](#troubleshooting) section of the repository.
 
-</details>
-
-<details>
-<summary><strong>Special Thanks 🙌</strong></summary>
+## Special Thanks 🙌
 
 A big thank you to the following references and projects that made this hackintosh project possible:
 
 - [Dortania Guide](https://dortania.github.io/OpenCore-Install-Guide/)
 - [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480)
 - [valnoxy](https://github.com/valnoxy/t480-oc)
-
-</details>
 
 Your support and contribution are greatly appreciated! 👏

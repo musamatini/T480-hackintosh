@@ -1,4 +1,4 @@
-# T480 Hackintosh 💻🍏
+# Thinkpad T480 Hackintosh 🍏
 
 Welcome to the T480 Hackintosh project, aimed at enabling macOS to run on the Lenovo Thinkpad T480. 🚀
 

@@ -47,7 +47,8 @@ Before you proceed, it's important to ensure your hardware specifications match 
 | Storage        | Western Digital Blue SN570 1TB     |
 | Thunderbolt    | JHL6240 Thunderbolt 3 LP Alpine Ridge |
 
-## BIOS Configuration 🔧
+<details>
+<summary><strong>BIOS Configuration 🔧</strong></summary>
 
 For successful installation, configure your BIOS settings as follows:
 
@@ -65,6 +66,8 @@ Make sure to set your StartUp Menu options to UEFI Only and disable `CSM Support
 For USB settings, set `Always On USB` to **Disabled**.
 
 In the Thunderbolt Menu, configure the settings accordingly.
+
+</details>
 
 ## Preparing USB ⚙️
 

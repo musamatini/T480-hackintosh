@@ -70,7 +70,7 @@ In the Thunderbolt Menu, configure the settings accordingly.
 - [**ProperTree**](https://github.com/corpnewt/ProperTree)
 - [**GenSMBIOS**](https://github.com/corpnewt/GenSMBIOS)
 
-### Formating USB
+### Formating USB 🧹
 1. Plug your USB device.
 2. Open CMD with administrative permissions, type `diskpart`
 3. Type `list disk` to see your disk id.
@@ -79,7 +79,7 @@ In the Thunderbolt Menu, configure the settings accordingly.
 6. Create a new partition where we can put our files on. First, type `create partition primary`, then select the new partition with `select partition 1` and format it `format fs=fat32 quick`.
 7. Finally, mount your pendrive by typing `assign`
 
-### OpenCore
+### OpenCore 🔄
 1. Download [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) as a ZIP.
 2. Extract the OpenCorePkg-master.zip file.
 3. With **Windows Terminal** or **CMD**, go to next path `OpenCorePkg-master\Utilities\macrecovery`
@@ -96,7 +96,7 @@ python3 macrecovery.py -b Mac-FFE5EF870D7BA81A -m 00000000000000000 download
 python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 ```
 
-### Folders
+### Folders 📁
 
 > **Notes**
 >
@@ -107,7 +107,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 3. Download and copy the `EFI` folder of this repository and paste it into your USB.
 4. Make sure you have `com.apple.recovery.boot` and `EFI` in the pendrive.
 
-### SMBIOS
+### SMBIOS  💿
 > **Notes**
 >
 > In order to use AppleID and other services, check if the serial generated has support with [Apple verification the coverage of a device](https://checkcoverage.apple.com/)
@@ -124,7 +124,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 > 2. Boot macOS without USB is possible, you'll need to create an EFI partition during disk manager steps.
 > 3. In the installation your computer may restart sometimes, keep calm and continue the process.
 
-### Boot USB
+### Boot USB 🚀
 
 1. Restart your computer and open Boot Menu during startup with `F12`
 2. Choose your USB device and wait.
@@ -132,7 +132,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 4. Press the **space bar** to display hidden options.
 5. Choose the `OC DEVEL (dmg)`, you could recognize like a yellow gear.
 
-### Partitions
+### Partitions 🗄️
 1. A menu must be display, choose `Utility Disk`.
 2. Touch `View` and choose the option `Show all devices`. Once done, all your storage devices will be show in the SideBar.
 3. Choose the device which you'll install the system and apply. the option `erase`. Make sure to have this settings.
@@ -145,7 +145,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
    - Format: MS-DOS (fat)
 > Do not select ExFat, it won't be possible to boot OC.
 
-### System
+### System 💻
 > Keep your pendrive pluged.
 1. Exit `Utility Disk` and choose `Install macOS...` or `Reinstall macOS...`
 2. Acept terms and conditions, now it will show you your devices options to install the system.

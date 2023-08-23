@@ -96,9 +96,64 @@ Follow these steps to prepare your USB:
   
 <br/>
 
-## Troubleshooting 🛠️❗
+## Troubleshooting 🩺
+> [ProperTree](https://github.com/corpnewt/ProperTree) is going to be used for modifying `config.plist`. Remember to install `hombrew` and `python-tk` dependency, also you can build te app in macOS.
 
-For any troubleshooting or customization needs, please refer to the [Troubleshooting](#troubleshooting) section of the repository.
+
+### Customize OpenCore
+Dortania's guide has a section that shows many [themes](https://dortania.github.io/OpenCanopy-Gallery/blackosx.html#themes) made by blackosx. In GitHub there are other OpenCore themes not showed in the guide but you could inquire them.
+
+### Samsung PM981
+Most Thinkpad T480 has the `Samsung PM981` which is not compatible with macOS even using NVMeFIX.kext won´t works at all. [Reference](https://www.reddit.com/r/hackintosh/comments/evkljr/samsung_pm981_nvme_hackintosh_reboot_loop/).
+
+### System language
+The default keyboard layout and language is Spanish. The value for English would be `en-US:0`. Check this value language [list](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt).
+
+To change the language modify:
+- `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82 > prev-lang:kbd`
+
+### Latam keyboard
+My keyboard has some troubles in the hackintosh, I have the "<>" keys at the bottom of the keyboard, this repository has fixed that key. Follow its README to install.
+
+- [Latam-keyboard by neosergio](https://github.com/neosergio/Latam-Keyboard)
+
+### BIOS entry
+By default this is enabled in this `config.plist`. I'll recommend this by default.
+#### Enable
+OC writes an entry into BIOS pointing directly to OpenCore.efi and the computer's boot menu shows OC and connected disks.
+- `Misc > Boot > LauncherOption = Full`
+- `Misc > Boot > LauncherPath = Default`
+#### Disable
+Computer's boot menu shows connected disks but OC does not write its own entry into BIOS
+- `Misc > Boot > LauncherOption = Disabled`
+- `Misc > Boot > LauncherPath = Default`
+
+### Hide OpenCore
+In the `config.plist` modify next line to show or hide the Boot Menu, I personally do not recommend this due to some cases a macOS update could break something.
+- `Misc > Boot > ShowPicker = False`
+- `Misc > Boot > UsePicker = True`
+
+### Change OpenCore background color
+We have to modify with hex valor the backgrounds color. Modify and change the value with the color you want (e.g. BFBFBF)
+- `NVRAM > Add > 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 > DefaultBackgroundColor > <000000>`
+
+### Change NVRAM size
+By default It is recommend to use 1.5Gb, even macbook Pro use the same size, but If you are who likes to using more, read next Reddit post about It.
+
+- [Whatevergreen iGPU VRAM allocation via framebuffer-unifiedmem](https://www.reddit.com/r/hackintosh/comments/gp07ko/whatevergreen_igpu_vram_allocation_via/?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=2)
+
+### Hide EFI partitions
+During the bootloader, EFI partitions may be showed. Hiding this is easiest as adding `.contentVisibility` file into **BOOT** and **OC** folders. By default this is enabled in this configuration.
+
+### Disable smoothing font
+Smoothing font can exhaust the eyes in 1366x768 display, disable It with next command.
+```sh
+# disable font smoothing
+defaults -currentHost write -g AppleFontSmoothing -int 0
+
+# enable default smoothing. You can also use "1" for light smoothing and "3" value for strong smoothing.
+defaults -currentHost write -g AppleFontSmoothing -int 2
+```
 
 <br/>
 

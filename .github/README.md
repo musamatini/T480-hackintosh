@@ -54,7 +54,8 @@ For USB settings, set `Always On USB` to **Disabled**.
 
 In the Thunderbolt Menu, configure the settings accordingly.
 
-<br/><br/>
+
+<br/>
 
 ## Preparing USB ⚙️
 

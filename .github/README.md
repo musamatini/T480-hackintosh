@@ -1,97 +1,177 @@
-# Thinkpad T480 Hackintosh 🍏
+# Lenovo ThinkPad T480 - OpenCore Configuration
 
-Welcome to the T480 Hackintosh project, aimed at enabling macOS to run on the Lenovo Thinkpad T480. 🚀
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Sonoma.png" alt="macOS Sonoma running on the T480" width="425">
 
-<img src="https://raw.githubusercontent.com/musamatini/T480-hackintosh/main/.github/assets/ThinkpadT480.png" alt="img" align="right" width="220px">
+[![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
+[![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
+[![macOS](https://img.shields.io/badge/macOS-Sonoma-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.9.3-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
-## Disclaimer ⚠️
+<p align="center">
+   <strong>Status: Maintained</strong>
+   <br />
+   <strong>Version: </strong>1.3.0
+   <br />
+   <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
+   <br />
+   <a href="https://github.com/valnoxy/t480-oc/issues">Report Bug</a>
+   ·
+   <a href="https://github.com/valnoxy/t480-oc/blob/main/CHANGELOG.md">View Changelog</a>
+   ·
+   <a href="https://www.youtube.com/watch?v=thYDWyJuUq4">YouTube Video</a>
+</p>
+</p>
+</br>
 
-This EFI is built upon the foundations of the [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) repositories. Credit goes to them for their valuable work.
+## ⚠️ Disclaimer
+This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any harm you cause to your device. This guide is provided "as-is" and all steps taken are done at your own risk.
 
-Please refer to their repositories for more information and consider supporting their efforts.
+> The ACPI patches and the style of this README are from [EETagent](https://github.com/EETagent/T480-OpenCore-Hackintosh).
 
-## Features ✨
+> **Important** macOS Sonoma no longer supports Broadcom Wifi cards. Long live Intel?
 
-- Support for most components and services on the Thinkpad T480
-- Use [sanitychecker](https://sanitychecker.ocutils.me/results/6d99f7fc-bb02-4f1b-8e30-99600eefad79) tool for checking `config.plist` status
-- Constantly updated and improved configuration
+&nbsp;
 
-## Hardware Specifications 🛠️
+## 💻 Tested devices
+Some users have reported that similar ThinkPads are compatible with this OpenCore configuration. Here is a list of these devices:
 
-Before you proceed, it's important to ensure your hardware specifications match those of the project.
+- Lenovo ThinkPad T580
+- [Lenovo ThinkPad X280](https://github.com/valnoxy/t480-oc/discussions/47)
 
-| Category       | Details                            |
-| -------------- | ---------------------------------- |
-| Display        | 1920x1080                          |
-| SMBIOS         | MacBookPro15,2                     |
-| CPU            | Intel Core i7-8650                 |
-| GPU            | Intel UHD Graphics 620             |
-| Memory         | 64GB (32x2) DDR4 3200MHz           |
-| LAN            | Intel Ethernet Connection I219-V   |
-| Wifi           | Intel Wi-Fi AC 8265NGW             |
-| Audio          | Realtek ALC256                     |
-| Bluetooth      | Bluetooth 4.2                      |
-| Storage        | Western Digital Blue SN570 1TB     |
-| Thunderbolt    | JHL6240 Thunderbolt 3 LP Alpine Ridge |
+&nbsp;
 
-## BIOS Configuration 🔧
+## Introduction
 
-For successful installation, configure your BIOS settings as follows:
+### EFI folders
 
-- Security > Security Chip: **Disabled**
-- Memory Protection > Execution Prevention: **Enabled**
-- Virtualization > Intel Virtualization Technology: **Enabled**
-- Virtualization > Intel VT-d Feature: **Enabled**
-- Anti-Theft > Computrace > Current Setting: **Disabled**
-- Secure Boot > Secure Boot: **Disabled**
-- Intel SGX Intel SGX Control: **Disabled**
-- Device Guard: **Disabled**
+This repo includes multiple EFI configurations for different macOS Versions.
 
-Make sure to set your StartUp Menu options to UEFI Only and disable `CSM Support`.
+| EFI               | Description                                                               | Type      |
+| ----------------- | ------------------------------------------------------------------------- | --------- |
+| `EFI`             | Supports macOS Monterey, Ventura & Sonoma (using Airportitlwm)            | `Stable`  |
+| `EFI - HeliPort`  | Supports every macOS Version except Ventura, Require HeliPort app         | `Stable`  |
 
-For USB settings, set `Always On USB` to **Disabled**.
+<a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
+Download HeliPort app »</strong></a>
 
-In the Thunderbolt Menu, configure the settings accordingly.
+<details>
+<summary><strong>💻 My Hardware</strong></summary>
+...
 
-## Preparing USB ⚙️
+&nbsp;
 
-Before installation, ensure you have the following tools:
+## Installation
 
-- [**Python 3**](https://www.python.org/)
-- [**ProperTree**](https://github.com/corpnewt/ProperTree)
-- [**GenSMBIOS**](https://github.com/corpnewt/GenSMBIOS)
+<details>  
+<summary><strong>📝 Requirements</strong></summary>
+</br>
 
-Follow these steps to prepare your USB:
+You must have the following items:
+- Lenovo ThinkPad T480 (Obviously 😁).
+- Access to a working Windows machine with Python installed.
+- A pendrive with more than 4 GB (Remember that during the preparation we will format the flash drive to create the installation media).
+- an Internet connection (recommended via Ethernet).
+- 1-2 hours of your time.
 
-1. Format the USB using the provided commands in CMD with administrative permissions.
-2. Download macOS with the provided commands in Windows Terminal or CMD.
-3. Create and organize necessary folders and files in the USB.
-4. Download the `EFI` folder from the repository and copy it to the USB.
+...
 
-## EFI Installation 🖥️
+</details>
 
-- Boot from your prepared USB device.
-- Choose the OC DEVEL (dmg) option from the boot menu.
-- Perform the required disk management steps for installation.
-- Follow the installation process and wait for the system to be installed.
-- Reboot your laptop and proceed with the remaining setup steps.
+<details>  
+<summary><strong>⚙️ Preperation</strong></summary>
+</br>
 
-## Booting without USB 🚀
+### Create the install media
 
-- Mount the EFI partition of your main disk.
-- Copy the EFI folder from the USB to the main disk's EFI partition.
-- Unplug the USB device and reboot your laptop to boot macOS.
+First of all, you will need the install media of macOS. I will use [macrecovery](https://github.com/acidanthera/OpenCorePkg) to download and create the macOS Install media.
 
-## Troubleshooting 🛠️❗
+...
 
-For any troubleshooting or customization needs, please refer to the [Troubleshooting](#troubleshooting) section of the repository.
+### Configure and install OpenCore
+...
 
-## Special Thanks 🙌
+### GenSMBIOS
+...
 
-A big thank you to the following references and projects that made this hackintosh project possible:
+### Enter the proper ROM value
+...
 
-- [Dortania Guide](https://dortania.github.io/OpenCore-Install-Guide/)
-- [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480)
-- [valnoxy](https://github.com/valnoxy/t480-oc)
+### ACPI patches
+...
 
-Your support and contribution are greatly appreciated! 👏
+### Install OpenCore
+...
+
+</details>
+
+<details>  
+<summary><strong>🚚 Installation</strong></summary>
+</br>
+
+### Prepare BIOS
+...
+
+### Install macOS
+...
+
+</details>
+
+...
+
+## Post-install (optional)
+
+<details>  
+<summary><strong>💾 Install OpenCore to Hard drive</strong></summary>
+</br>
+
+1. Press `ALT + SPACE` and open terminal. Type `sudo diskutil mountDisk disk0s1` (where disk0s1 corresponds to the EFI partition of the main disk)
+2. Open Finder and copy the EFI folder of your USB device to the main disk's EFI partition.
+3. Unplug the USB device and reboot your laptop. Now you can boot macOS without your USB device.
+
+</details>
+
+<details>  
+<summary><strong>✏️ Create a offline install media (Optional)</strong></summary>
+</br>
+
+In case of reinstalling macOS, a offline install media can save some time. You also don't need an Ethernet connection for the installation.
+To create a offline install media, you need the following stuff: 
+
+- macOS Installer from the App Store.
+- A 16 GB pendrive (Keep in mind, during the preperation we will format the disk to create the install media).
+
+...
+
+</details>
+
+...
+
+## Status
+
+<details>  
+<summary><strong>✅ What's working</strong></summary>
+</br>
+ 
+- [X] Intel WiFi & Bluetooth (thanks to [itlwn](https://github.com/OpenIntelWireless/itlwm))
+- [X] Brightness / Volume Control
+- [X] Battery Information
+- [X] Audio (Audio Jack & Speaker)
+- [X] USB Ports & Built-in Camera
+- [X] Graphics Acceleration
+- [X] Trackpoint / Touchpad
+- [X] Power management / Sleep
+- [X] FaceTime / iMessage (iServices)
+- [X] HDMI
+- [X] Automatic OS updates
+- [X] Handoff / Universal Clipboard
+- [X] Sidecar (Cable) / AirPlay to Mac
+- [X] SIP / FireVault 2
+- [X] USB-C
+
+...
+
+</details>
+
+<details>  
+<summary><strong>⚠️ What's not working</

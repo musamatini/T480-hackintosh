@@ -31,6 +31,8 @@ Please refer to their repositories for more information and consider supporting 
 | Storage        | Western Digital Blue SN570 1TB     |
 | Thunderbolt    | JHL6240 Thunderbolt 3 LP Alpine Ridge |
 
+<br/><br/>
+
 ## BIOS Configuration 🔧
 
 For successful installation, configure your BIOS settings as follows:

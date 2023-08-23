@@ -13,7 +13,10 @@ Please refer to their repositories for more information and consider supporting 
 
 ## Hardware Specifications 🛠️
 
-Before you proceed, it's important to ensure your hardware specifications match those of the project.
+> IMPORTANT!
+>
+> 1. Add **NVMeFix.kext** if you don't use any Western Digital storage device.
+> 2. Generate your own **SMBIOS** or your won't be able to use Apple Services.
 
 | Category       | Details                            |
 | -------------- | ---------------------------------- |

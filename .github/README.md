@@ -17,13 +17,13 @@ Welcome to the T480 Hackintosh project, aimed at enabling macOS to run on the Le
 - [Troubleshooting](#troubleshooting) 🛠️❗
 - [Special Thanks](#special-thanks) 🙌
 
-## Disclaimer ⚠️
+[Disclaimer ⚠️](#disclaimer) 🖥️
 
 This EFI is built upon the foundations of the [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) repositories. Credit goes to them for their valuable work.
 
 Please refer to their repositories for more information and consider supporting their efforts.
 
-## Features ✨
+## Features ✨  
 
 - Support for most components and services on the Thinkpad T480
 - Use [sanitychecker](https://sanitychecker.ocutils.me/results/6d99f7fc-bb02-4f1b-8e30-99600eefad79) tool for checking `config.plist` status
@@ -81,7 +81,7 @@ Follow these steps to prepare your USB:
 3. Create and organize necessary folders and files in the USB.
 4. Download the `EFI` folder from the repository and copy it to the USB.
 
-## EFI Installation 🖥️
+- [EFI Installation](#efi-installation) 🖥️
 
 - Boot from your prepared USB device.
 - Choose the OC DEVEL (dmg) option from the boot menu.

@@ -10,11 +10,6 @@ This EFI is built upon the foundations of the [pierpaolodimarzo](https://github.
 
 Please refer to their repositories for more information and consider supporting their efforts.
 
-## Features ✨  
-
-- Support for most components and services on the Thinkpad T480
-- Use [sanitychecker](https://sanitychecker.ocutils.me/results/6d99f7fc-bb02-4f1b-8e30-99600eefad79) tool for checking `config.plist` status
-- Constantly updated and improved configuration
 
 ## Hardware Specifications 🛠️
 

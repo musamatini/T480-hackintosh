@@ -54,6 +54,8 @@ For USB settings, set `Always On USB` to **Disabled**.
 
 In the Thunderbolt Menu, configure the settings accordingly.
 
+<br/><br/>
+
 ## Preparing USB ⚙️
 
 Before installation, ensure you have the following tools:
@@ -71,7 +73,7 @@ Follow these steps to prepare your USB:
 
 <br/><br/>
 
-##EFI Installation🖥️
+## EFI Installation🖥️
 
 - Boot from your prepared USB device.
 - Choose the OC DEVEL (dmg) option from the boot menu.

@@ -171,7 +171,7 @@ Congratulation, now you'll see `Select Your Country or Region` interface, that m
 <br/>
 
 
-
+## Troubleshooting 🛠️❗
   > [ProperTree](https://github.com/corpnewt/ProperTree) is going to be used for modifying `config.plist`. Remember to install `hombrew` and `python-tk` dependency, also you can build te app in macOS.
 
 

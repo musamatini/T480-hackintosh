@@ -98,7 +98,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 
 ### Folders 📁
 
-> **Notes**
+> **Note**
 >
 > There is an EFI specifically for BigSur, use It if you don't plan to use Ventura or Monterey.
 
@@ -108,7 +108,7 @@ python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 4. Make sure you have `com.apple.recovery.boot` and `EFI` in the pendrive.
 
 ### SMBIOS  💿
-> **Notes**
+> **Note**
 >
 > In order to use AppleID and other services, check if the serial generated has support with [Apple verification the coverage of a device](https://checkcoverage.apple.com/)
 

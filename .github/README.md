@@ -181,13 +181,13 @@ Dortania's guide has a section that shows many [themes](https://dortania.github.
 ### Samsung PM981
 Most Thinkpad T480 has the `Samsung PM981` which is not compatible with macOS even using NVMeFIX.kext won´t works at all. [Reference](https://www.reddit.com/r/hackintosh/comments/evkljr/samsung_pm981_nvme_hackintosh_reboot_loop/).
 
-### System language
+### System language 
 The default keyboard layout and language is Spanish. The value for English would be `en-US:0`. Check this value language [list](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt).
 
 To change the language modify:
 - `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82 > prev-lang:kbd`
 
-### Latam keyboard
+### Latam keyboard 
 My keyboard has some troubles in the hackintosh, I have the "<>" keys at the bottom of the keyboard, this repository has fixed that key. Follow its README to install.
 
 - [Latam-keyboard by neosergio](https://github.com/neosergio/Latam-Keyboard)

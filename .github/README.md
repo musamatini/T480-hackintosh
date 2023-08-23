@@ -172,9 +172,6 @@ Congratulation, now you'll see `Select Your Country or Region` interface, that m
 
 
 
-<details>
-  <summary>  ## <span style="font-size:larger;">Troubleshooting 🛠️❗</span>  </summary>
-  
   > [ProperTree](https://github.com/corpnewt/ProperTree) is going to be used for modifying `config.plist`. Remember to install `hombrew` and `python-tk` dependency, also you can build te app in macOS.
 
 
@@ -233,8 +230,6 @@ defaults -currentHost write -g AppleFontSmoothing -int 0
 defaults -currentHost write -g AppleFontSmoothing -int 2
 ```
 
-  
-</details>
 
 <br/>
 

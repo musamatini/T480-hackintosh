@@ -1,35 +1,35 @@
-# T480 Hackintosh
+# T480 Hackintosh 💻🍏
 
-Welcome to the T480 Hackintosh project, aimed at enabling macOS to run on the Lenovo Thinkpad T480.
+Welcome to the T480 Hackintosh project, aimed at enabling macOS to run on the Lenovo Thinkpad T480. 🚀
 
 <img src="https://raw.githubusercontent.com/musamatini/T480-hackintosh/main/.github/assets/ThinkpadT480.png" alt="img" align="right" width="220px">
 
-## Table of Contents
+## Table of Contents 📚
 
-- [Disclaimer](#disclaimer)
-- [Features](#features)
-- [Hardware Specifications](#hardware)
-- [BIOS Configuration](#bios-configuration)
-- [Preparing USB](#preparing-usb)
-- [OpenCore Customization](#opencore-customization)
-- [EFI Installation](#efi-installation)
-- [Booting without USB](#booting-without-usb)
-- [Troubleshooting](#troubleshooting)
-- [Special Thanks](#special-thanks)
+- [Disclaimer](#disclaimer) ⚠️
+- [Features](#features) ✨
+- [Hardware Specifications](#hardware) 🛠️
+- [BIOS Configuration](#bios-configuration) 🔧
+- [Preparing USB](#preparing-usb) ⚙️
+- [OpenCore Customization](#opencore-customization) 🧰
+- [EFI Installation](#efi-installation) 🖥️
+- [Booting without USB](#booting-without-usb) 🚀
+- [Troubleshooting](#troubleshooting) 🛠️❗
+- [Special Thanks](#special-thanks) 🙌
 
-## Disclaimer
+## Disclaimer ⚠️
 
 This EFI is built upon the foundations of the [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480) and [valnoxy](https://github.com/valnoxy/t480-oc) repositories. Credit goes to them for their valuable work.
 
 Please refer to their repositories for more information and consider supporting their efforts.
 
-## Features
+## Features ✨
 
 - Support for most components and services on the Thinkpad T480
 - Use [sanitychecker](https://sanitychecker.ocutils.me/results/6d99f7fc-bb02-4f1b-8e30-99600eefad79) tool for checking `config.plist` status
 - Constantly updated and improved configuration
 
-## Hardware Specifications
+## Hardware Specifications 🛠️
 
 Before you proceed, it's important to ensure your hardware specifications match those of the project.
 
@@ -47,7 +47,7 @@ Before you proceed, it's important to ensure your hardware specifications match 
 | Storage        | Western Digital Blue SN570 1TB     |
 | Thunderbolt    | JHL6240 Thunderbolt 3 LP Alpine Ridge |
 
-## BIOS Configuration
+## BIOS Configuration 🔧
 
 For successful installation, configure your BIOS settings as follows:
 
@@ -66,7 +66,7 @@ For USB settings, set `Always On USB` to **Disabled**.
 
 In the Thunderbolt Menu, configure the settings accordingly.
 
-## Preparing USB
+## Preparing USB ⚙️
 
 Before installation, ensure you have the following tools:
 
@@ -81,7 +81,7 @@ Follow these steps to prepare your USB:
 3. Create and organize necessary folders and files in the USB.
 4. Download the `EFI` folder from the repository and copy it to the USB.
 
-## EFI Installation
+## EFI Installation 🖥️
 
 - Boot from your prepared USB device.
 - Choose the OC DEVEL (dmg) option from the boot menu.
@@ -89,17 +89,17 @@ Follow these steps to prepare your USB:
 - Follow the installation process and wait for the system to be installed.
 - Reboot your laptop and proceed with the remaining setup steps.
 
-## Booting without USB
+## Booting without USB 🚀
 
 - Mount the EFI partition of your main disk.
 - Copy the EFI folder from the USB to the main disk's EFI partition.
 - Unplug the USB device and reboot your laptop to boot macOS.
 
-## Troubleshooting
+## Troubleshooting 🛠️❗
 
 For any troubleshooting or customization needs, please refer to the [Troubleshooting](#troubleshooting) section of the repository.
 
-## Special Thanks
+## Special Thanks 🙌
 
 A big thank you to the following references and projects that made this hackintosh project possible:
 
@@ -107,4 +107,4 @@ A big thank you to the following references and projects that made this hackinto
 - [pierpaolodimarzo](https://github.com/pierpaolodimarzo/ThinkPad-T480)
 - [valnoxy](https://github.com/valnoxy/t480-oc)
 
-Your support and contribution are greatly appreciated!
+Your support and contribution are greatly appreciated! 👏
